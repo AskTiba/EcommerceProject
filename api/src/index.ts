@@ -1,12 +1,11 @@
 import express from "express";
-
-const app = express();
+import productsRoutes from "./routes//products/index";
 
 const port = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello baby Jade Mwesigwa");
-});
+const app = express();
+
+app.use("/products", productsRoutes);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
